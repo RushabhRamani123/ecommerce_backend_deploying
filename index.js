@@ -27,20 +27,17 @@ env.config();
 const mongoose = require("mongoose");
 // cors
 const cors = require("cors");
-mongoose
-  .connect(
-    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.33mtcp3.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(() => {
-    console.log("Database connected");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+ mongoose.connect(process.env.MONGODB_CONNECT_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}) .then(() => {
+  console.log("Database connected");
+})
+.catch((err) => {
+  console.log(err);
+});
+
+ 
 app.use(cors());
 app.use(express.json());
 app.use("/api", pageRoutes);
