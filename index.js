@@ -2,25 +2,25 @@ const express = require("express");
 const app = express();
 const env = require("dotenv");
 // routes authentication
-const userRoutes = require("./routes/auth");
+const userRoutes = require("./src/routes/auth");
 // routes of the admin
-const adminRoutes = require("./routes/admin/auth");
+const adminRoutes = require("./src/routes/admin/auth");
 // routes for the category
-const categoryRoutes = require("./routes/category");
+const categoryRoutes = require("./src/routes/category");
 // routes for the product
-const productRoutes = require("./routes/product");
+const productRoutes = require("./src/routes/product");
 // routes for the cart
-const cartRoutes = require("./routes/cart");
+const cartRoutes = require("./src/routes/cart");
 // routes for the initialData 
-const initialDataRotes = require("./routes/admin/intialData");
+const initialDataRotes = require("./src/routes/admin/intialData");
 // routes for the page
-const pageRoutes = require("./routes/admin/page");
+const pageRoutes = require("./src/routes/admin/page");
 // roues for the order
-const orderRoutes = require("./routes/order");
+const orderRoutes = require("./src/routes/order");
 // routes for the order admin
-const adminOrderRoutes = require("./routes/admin/order");
+const adminOrderRoutes = require("./src/routes/admin/order");
 // environment variables or constants
-const addressRoutes = require("./routes/address");
+const addressRoutes = require("./src/routes/address");
 
 env.config();
 //database connection
