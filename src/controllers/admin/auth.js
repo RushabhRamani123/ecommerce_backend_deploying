@@ -1,7 +1,7 @@
 const User = require("../../models/user");
 const jwt = require("jsonwebtoken");
-const env = require("dotenv");
-env.config();
+const dotenv = require('dotenv');
+dotenv.config();
 exports.signup = async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });

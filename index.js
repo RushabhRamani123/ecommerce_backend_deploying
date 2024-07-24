@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const env = require("dotenv");
+const dotenv = require('dotenv');
+dotenv.config();
+
 // routes authentication
 const userRoutes = require("./src/routes/auth");
 // routes of the admin
@@ -21,8 +23,6 @@ const orderRoutes = require("./src/routes/order");
 const adminOrderRoutes = require("./src/routes/admin/order");
 // environment variables or constants
 const addressRoutes = require("./src/routes/address");
-
-env.config();
 //database connection
 const mongoose = require("mongoose");
 // cors
@@ -51,6 +51,6 @@ app.use("/api", addressRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", adminOrderRoutes);
 //listening to the port
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT||8000, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
