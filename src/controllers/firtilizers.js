@@ -54,7 +54,7 @@ const fertilizersArray = [
   ];
   
   exports.getImage = (req, res) => {
-    const { name } = req.query; // Get the 'name' query parameter from the request
+    const { name } = req.body; // Get the 'name' query parameter from the request
   
     // Find the fertilizer in the array based on the fertilizerName
     const fertilizer = fertilizersArray.find(f => f.fertilizerName.toLowerCase() === name.toLowerCase());
